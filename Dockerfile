@@ -73,3 +73,12 @@ RUN wget --no-check-certificate https://osdn.net/dl/cloudi/cloudi-2.0.6.tar.gz &
     ./configure --enable-java-support=no --enable-javascript-support=no --enable-perl-support=no --enable-php-support=no --enable-python-support=no --enable-python-c-support=no --enable-ruby-support=no --with-integration-tests=no && \
     make && \
     make install
+
+# Allow the HTTP Server port for CloudI
+EXPOSE 6464
+
+# Allow the Erlang Port Mapper Daemon port
+EXPOSE 4369
+
+# Allow the distributed Erlang ports (inet_dist_listen)
+EXPOSE 4374-4474
